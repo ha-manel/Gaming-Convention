@@ -3,3 +3,23 @@
     @content;
   }
 }
+
+@mixin section-header {
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+@mixin short-horizontal-line {
+  width: 40px;
+  border: 1px solid $orange-color;
+  margin-bottom: 30px;
+}
+
+@mixin section-container {
+  width: 100vw;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
