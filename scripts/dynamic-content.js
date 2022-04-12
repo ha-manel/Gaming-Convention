@@ -37,10 +37,12 @@ conventionActivities.forEach((activity) => {
   programDiv.appendChild(activityDiv);
 });
 
-// dynamic speakers
-const speakersDiv = document.querySelector('#speakers-div');
-const more = document.querySelector('#more');
-const less = document.querySelector('#less');
+// retrieve elements to create dynamic speakers
+const speakersContainer = document.querySelector('#speakers-div');
+const width = window.innerWidth || document.documentElement.clientWidth
+  || document.body.clientWidth;
+const showMoreBtn = document.querySelector('#show-more');
+// create speakers info objects
 const conventionSpeakers = [
   {
     picture: '../images/pewds.jpg',
@@ -76,9 +78,14 @@ const conventionSpeakers = [
     picture: '../images/kaypea.webp',
     name: 'Kelsie Pelling (KayPea)',
     title: 'Partnered Twitch streamer',
-    description: 'she is known for specialising as a mid-laner in League of Legends. She has developed a large community of people to share in positive and competitive gameplay.',
+    description: 'She is known for specialising as a mid-laner in League of Legends. She has developed a large community of people to share in positive and competitive gameplay.',
   },
 ];
+// create hidden speakers div
+const hiddenSpeakers = document.createElement('div');
+hiddenSpeakers.classList.add('hidden-speakers');
+
+// create the cards and append them
 conventionSpeakers.forEach((speaker) => {
   const speakerDiv = document.createElement('div');
   speakerDiv.className = 'speaker';
@@ -91,19 +98,25 @@ conventionSpeakers.forEach((speaker) => {
           <hr>
           <p>${speaker.description}</p>
         </div>`;
-  speakersDiv.appendChild(speakerDiv);
-  if (conventionSpeakers.indexOf(speaker) >= 2) {
-    speakerDiv.classList.add('hidden');
+  if (width <= 768 && conventionSpeakers.indexOf(speaker) >= 2) {
+    hiddenSpeakers.appendChild(speakerDiv);
+  } else {
+    showMoreBtn.style.display = 'none';
+    speakersContainer.appendChild(speakerDiv);
   }
 });
 
+// append hidden speakers div to parent element
+speakersContainer.appendChild(hiddenSpeakers);
+
 // show more speakers
-const showMoreBtn = document.querySelector('#show-more');
-const hiddenDiv = document.querySelectorAll('.hidden');
+const hiddenDiv = document.querySelector('.hidden-speakers');
 showMoreBtn.addEventListener('click', () => {
-  hiddenDiv.forEach((div) => {
-    div.classList.toggle('hidden');
-  });
-  more.classList.toggle('inactive');
-  less.classList.toggle('active');
+  if (hiddenDiv.classList.contains('visible')) {
+    hiddenDiv.classList.remove('visible');
+    showMoreBtn.innerHTML = 'MORE <i class="fa-solid fa-angle-down"></i>';
+  } else {
+    hiddenDiv.classList.add('visible');
+    showMoreBtn.innerHTML = 'LESS <i class="fa-solid fa-angle-up"></i>';
+  }
 });
