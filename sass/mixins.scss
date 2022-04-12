@@ -44,7 +44,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px 10px 0;
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -66,9 +66,10 @@
     }
 
     #logo {
-      width: 48px;
+      width: 55px;
       margin-right: 20px;
       cursor: pointer;
+      object-fit: cover;
 
       @include media-query {
         width: 75px;
@@ -91,7 +92,7 @@
     width: fit-content;
     margin-left: 20px;
     position: absolute;
-    top: 12px;
+    top: 15px;
     z-index: 3;
 
     @include media-query {
@@ -100,7 +101,7 @@
 
     .bar {
       display: block;
-      width: 25px;
+      width: 28px;
       height: 4px;
       margin: 5px auto;
       -webkit-transition: all 0.3s ease-in-out;
@@ -133,7 +134,7 @@
     background-color: $mobile-navmenu-color;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 30px;
     position: absolute;
     top: 0;
     left: 0;
@@ -176,6 +177,10 @@
             color: $orange-color;
           }
 
+          &.link:active {
+            color: $orange-color;
+          }
+
           &.link::after {
             display: block;
             content: '';
@@ -188,6 +193,10 @@
           &.link:hover::after {
             transform: scaleX(1);
           }
+
+          &.link.current {
+            color: $orange-color;
+          }
         }
       }
     }
@@ -197,18 +206,20 @@
     }
   }
 
-  #campaign {
-    margin-left: 20px;
-    color: $orange-color;
-    font-weight: 600;
-    padding: 8px;
-    border: 3px solid $orange-color;
-    box-sizing: border-box;
-    transition: all 0.3s ease-in-out;
+  @include media-query {
+    #campaign {
+      margin-left: 20px;
+      color: $orange-color;
+      font-weight: 600;
+      padding: 8px;
+      border: 3px solid $orange-color;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
 
-    &:hover {
-      color: #d00000;
-      border-color: #d00000;
+      &:hover {
+        color: #d00000;
+        border-color: #d00000;
+      }
     }
   }
 }
