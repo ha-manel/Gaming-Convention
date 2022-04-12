@@ -30,22 +30,21 @@ const conventionActivities = [
 conventionActivities.forEach((activity) => {
   const activityDiv = document.createElement('div');
   activityDiv.className = 'activity';
-  activityDiv.innerHTML = `<img src="${activity.img}" alt=" ">
-  <h3>${activity.title}</h3>
-  <p>${activity.description}</p>`;
+  activityDiv.innerHTML = `<img class="activity-icon" src="${activity.img}" alt=" ">
+  <h3 class="activity-title">${activity.title}</h3>
+  <p class="activity-description">${activity.description}</p>`;
 
   programDiv.appendChild(activityDiv);
 });
 
+// dynamic featured speakers
 // retrieve elements to create dynamic speakers
 const speakersContainer = document.querySelector('#speakers-div');
-const width = window.innerWidth || document.documentElement.clientWidth
-  || document.body.clientWidth;
 const showMoreBtn = document.querySelector('#show-more');
 // create speakers info objects
 const conventionSpeakers = [
   {
-    picture: '../images/pewds.jpg',
+    picture: '../images/pewds.png',
     name: 'Felix Kjellberg (PewDiePie)',
     title: 'A Swedish YouTuber and gamer.',
     description: 'PewDiePie\'s popularity on YouTube and extensive media coverage have made him one of the most noted online personalities and content creators.',
@@ -93,15 +92,14 @@ conventionSpeakers.forEach((speaker) => {
           <img src="${speaker.picture}" alt="${speaker.name}">
         </div>
         <div class="speaker-description">
-          <h3>${speaker.name}</h3>
-          <small>${speaker.title}</small>
-          <hr>
-          <p>${speaker.description}</p>
+          <h3 class="speaker-name">${speaker.name}</h3>
+          <small class="speaker-title">${speaker.title}</small>
+          <hr class="gray-hr">
+          <p class="speaker-info">${speaker.description}</p>
         </div>`;
-  if (width <= 768 && conventionSpeakers.indexOf(speaker) >= 2) {
+  if (conventionSpeakers.indexOf(speaker) >= 2) {
     hiddenSpeakers.appendChild(speakerDiv);
   } else {
-    showMoreBtn.style.display = 'none';
     speakersContainer.appendChild(speakerDiv);
   }
 });
@@ -109,14 +107,14 @@ conventionSpeakers.forEach((speaker) => {
 // append hidden speakers div to parent element
 speakersContainer.appendChild(hiddenSpeakers);
 
-// show more speakers
+// show more speakers event handler
 const hiddenDiv = document.querySelector('.hidden-speakers');
 showMoreBtn.addEventListener('click', () => {
   if (hiddenDiv.classList.contains('visible')) {
     hiddenDiv.classList.remove('visible');
-    showMoreBtn.innerHTML = 'MORE <i class="fa-solid fa-angle-down"></i>';
+    showMoreBtn.innerHTML = 'MORE <i class="fa-solid fa-angle-down arrow-icon"></i>';
   } else {
     hiddenDiv.classList.add('visible');
-    showMoreBtn.innerHTML = 'LESS <i class="fa-solid fa-angle-up"></i>';
+    showMoreBtn.innerHTML = 'LESS <i class="fa-solid fa-angle-up arrow-icon"></i>';
   }
 });
