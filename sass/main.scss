@@ -13,6 +13,8 @@ header {
 .headline {
   @include headline-page('../images/main-mobile_bg.png', '../images/main_big-bg.png');
 
+  background-size: cover;
+
   .page-header {
     @include webpage-header;
 
@@ -67,7 +69,15 @@ header {
   }
 }
 
-//program
+.section-header {
+  @include section-header;
+}
+
+.orange-hr {
+  @include short-horizontal-line;
+}
+
+//event's program
 #program {
   background-color: $dark-color;
   background-image: url('../images/main-bg.png');
@@ -79,13 +89,7 @@ header {
   }
 
   .section-header {
-    @include section-header;
-
     color: $soft-white-color;
-  }
-
-  .orange-hr {
-    @include short-horizontal-line;
   }
 
   #more-program {
@@ -197,6 +201,7 @@ header {
   }
 }
 
+//featured speakers
 #featured-speakers {
   @include section-container(column);
 
@@ -205,13 +210,7 @@ header {
   }
 
   .section-header {
-    @include section-header;
-
     color: $dark-color;
-  }
-
-  .orange-hr {
-    @include short-horizontal-line;
   }
 
   #show-more {
@@ -240,7 +239,7 @@ header {
 
 #speakers-div {
   @include media-query {
-    height: 660px;
+    height: 640px;
     margin-top: 30px;
     padding: 0 6.25%;
     display: grid;
@@ -285,7 +284,7 @@ header {
 
       @include media-query {
         font-size: 20px;
-        color: $banner-color;
+        color: $dark-gray-color;
       }
     }
 
@@ -331,7 +330,6 @@ header {
 
   &.visible {
     height: 860px;
-    max-height: 1200px;
     overflow: visible;
 
     @include media-query {
@@ -340,14 +338,17 @@ header {
   }
 }
 
+//sponsors section
 .sponsors {
   @include sponsors;
 }
 
+//footer section
 footer {
   @include footer-section;
 }
 
+//body element
 body {
   @include body-style;
 }

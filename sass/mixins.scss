@@ -1,3 +1,4 @@
+//media query
 @mixin media-query {
   @media screen and (min-width: 768px) {
     @content;
@@ -17,6 +18,7 @@
   }
 }
 
+//body element
 @mixin body-style {
   font-family: $lato;
   width: 100vw;
@@ -35,12 +37,13 @@
   }
 }
 
+//header
 @mixin header {
   width: 100%;
 
   .top-header {
     width: 100%;
-    background-color: $banner-color;
+    background-color: $dark-gray-color;
     padding: 7px 180px;
     display: none;
     justify-content: flex-end;
@@ -57,7 +60,7 @@
       margin-right: 0;
 
       .top-link {
-        color: #fbfefb;
+        color: $soft-white-color;
         font-size: 11px;
 
         &:hover {
@@ -88,7 +91,7 @@
       position: unset;
       flex-direction: row-reverse;
       padding: 5px 12%;
-      background-color: #fbfefb;
+      background-color: $soft-white-color;
 
       &.fixed {
         position: fixed;
@@ -142,7 +145,7 @@
 
     &.active {
       .bar {
-        background-color: #fbfefb;
+        background-color: $soft-white-color;
 
         &:nth-child(2) {
           opacity: 0;
@@ -195,11 +198,11 @@
 
       a {
         font-size: 25px;
-        color: #fbfefb;
+        color: $soft-white-color;
         font-weight: 600;
 
         @include media-query {
-          color: $banner-color;
+          color: $dark-gray-color;
           font-size: 14px;
           font-weight: 600;
           letter-spacing: 0.1px;
@@ -238,7 +241,7 @@
   }
 
   @include media-query {
-    .campaign {
+    #campaign {
       margin-left: 20px;
       color: $orange-color;
       font-weight: 600;
@@ -255,6 +258,7 @@
   }
 }
 
+//headline page
 @mixin headline-page($bg-img-mobile, $bg-img-desktop) {
   width: 100vw;
   padding: 25px 5% 40px;
@@ -262,7 +266,6 @@
   background-image: url($bg-img-mobile);
   background-position: 0 -15px;
   background-repeat: no-repeat;
-  background-size: cover;
   background-color: $light-gray-color;
   box-sizing: border-box;
 
@@ -295,7 +298,7 @@
   background-color: $light-gray-color;
   margin-top: 10px;
   padding: 12px;
-  border: 2px solid #fbfefb;
+  border: 2px solid $soft-white-color;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
@@ -306,11 +309,12 @@
   @include media-query {
     width: 650px;
     font-size: 16px;
-    border: 3px solid #fbfefb;
+    border: 3px solid $soft-white-color;
     padding: 12px 20px;
   }
 }
 
+//sections' containers
 @mixin section-container($flex-direction) {
   width: 100vw;
   padding: 40px 20px;
@@ -333,6 +337,7 @@
   margin-bottom: 30px;
 }
 
+//sponsors section
 @mixin sponsors {
   @include section-container(column);
 
@@ -343,13 +348,7 @@
   }
 
   .sponsors-header {
-    @include section-header;
-
-    color: #fbfefb;
-  }
-
-  .orange-hr {
-    @include short-horizontal-line;
+    color: $soft-white-color;
   }
 
   .brands {
@@ -372,6 +371,7 @@
   }
 }
 
+//footer section
 @mixin footer-section {
   @include section-container(row);
 

@@ -8,5 +8,5 @@ bodyDiv.appendChild(sponsors);
 
 // footer section
 const footer = document.createElement('footer');
-footer.innerHTML = ' <img src="./images/gc-logo.png" alt=" " class="footer-logo"> <p class="copyrights">2022 Gaming Convention. Boston, MA. <br> Some Rights Reserved.</p>';
+footer.innerHTML = '<img src="./images/gc-logo.png" alt=" " class="footer-logo"> <p class="copyrights">2022 Gaming Convention. Boston, MA. <br> Some Rights Reserved.</p>';
 bodyDiv.appendChild(footer);

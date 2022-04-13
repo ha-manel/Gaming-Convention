@@ -4,12 +4,15 @@
 //resets
 @include resets;
 
+//header
 header {
   @include header;
 }
 
+//headline-section
 .headline {
   @include headline-page('../images/about-bg.png', '../images/about-bg.png');
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +21,7 @@ header {
 
   .page-header {
     @include webpage-header;
+
     text-align: center;
 
     @include media-query {
@@ -73,18 +77,22 @@ header {
   @include short-horizontal-line;
 }
 
+.section-header {
+  @include section-header;
+}
+
+//about the logo section
 #logo-section {
   @include section-container(column);
+
   border-bottom: 0.5px solid $gray-color;
 
   .section-header {
-    @include section-header;
     font-weight: 600;
-    color: $banner-color;
+    color: $dark-gray-color;
   }
 
   .orange-hr {
-    @include short-horizontal-line;
     margin-bottom: 20px;
     margin-top: 13px;
   }
@@ -114,12 +122,12 @@ header {
   }
 }
 
+//past events
 #past-events {
   @include section-container(column);
 
   .section-header {
-    @include section-header;
-    color: $banner-color;
+    color: $dark-gray-color;
     font-weight: 600;
   }
 }
@@ -170,6 +178,7 @@ header {
   }
 }
 
+//sponsors section
 .sponsors {
   @include sponsors;
 
@@ -178,6 +187,7 @@ header {
   }
 }
 
+//footer section
 footer {
   @include footer-section;
 
@@ -190,6 +200,7 @@ footer {
   }
 }
 
+//body element
 body {
   @include body-style;
 }

@@ -8,7 +8,7 @@ header.appendChild(topHeader);
 
 // create the navbar
 const navBar = document.createElement('nav');
-navBar.innerHTML = '<div class="nav-menu"><div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><ul class="nav-links"><li><a href="about.html" class="link">About</a></li><li><a href="index.html#program" class="link">Program</a></li><li><a href="index.html#featured-speakers" class="link">Speakers</a></li><li><a href="#sponsors" class="link">Sponsors</a></li><li><a href="#" class="campaign">GC Campaign</a></li></ul></div><a href="index.html"><img src="./images/gc-logo.png" alt="" class="logo"></a>';
+navBar.innerHTML = '<div class="nav-menu"><div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><ul class="nav-links"><li><a href="about.html" class="link">About</a></li><li><a href="index.html#program" class="link">Program</a></li><li><a href="index.html#featured-speakers" class="link">Speakers</a></li><li><a href="#sponsors" class="link">Sponsors</a></li><li><a href="#" id="campaign">GC Campaign</a></li></ul></div><a href="index.html"><img src="./images/gc-logo.png" alt="" class="logo"></a>';
 header.appendChild(navBar);
 
 // mobile navbar
