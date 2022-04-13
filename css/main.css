@@ -551,7 +551,7 @@ header .nav-links.active {
 
 @media screen and (min-width: 768px) {
   #speakers-div {
-    height: 640px;
+    height: 660px;
     margin-top: 30px;
     padding: 0 6.25%;
     display: grid;
@@ -626,10 +626,8 @@ header .nav-links.active {
 }
 
 .hidden-speakers {
-  height: 0;
-  overflow: hidden;
+  display: none;
   margin-bottom: 20px;
-  transition: all 0.5s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
@@ -648,14 +646,7 @@ header .nav-links.active {
 }
 
 .hidden-speakers.visible {
-  height: 860px;
-  overflow: visible;
-}
-
-@media screen and (min-width: 768px) {
-  .hidden-speakers.visible {
-    height: 460px;
-  }
+  display: grid;
 }
 
 .sponsors {

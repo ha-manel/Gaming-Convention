@@ -239,7 +239,7 @@ header {
 
 #speakers-div {
   @include media-query {
-    height: 640px;
+    height: 660px;
     margin-top: 30px;
     padding: 0 6.25%;
     display: grid;
@@ -310,10 +310,8 @@ header {
 }
 
 .hidden-speakers {
-  height: 0;
-  overflow: hidden;
+  display: none;
   margin-bottom: 20px;
-  transition: all 0.5s ease-in-out;
 
   @include media-query {
     grid-column: 1 / span 2;
@@ -329,12 +327,7 @@ header {
   }
 
   &.visible {
-    height: 860px;
-    overflow: visible;
-
-    @include media-query {
-      height: 460px;
-    }
+    display: grid;
   }
 }
 
