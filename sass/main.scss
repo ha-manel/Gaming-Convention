@@ -1,0 +1,347 @@
+@import 'variables';
+@import 'mixins';
+
+//resets
+@include resets;
+
+//header
+header {
+  @include header;
+}
+
+//headline-section
+.headline {
+  @include headline-page('../images/main-mobile_bg.png', '../images/main_big-bg.png');
+
+  background-size: cover;
+
+  .page-header {
+    @include webpage-header;
+
+    span {
+      font-family: $lato;
+      letter-spacing: 1px;
+      font-size: 24px;
+      font-weight: 400;
+      color: $header-span-color;
+      -webkit-text-fill-color: $header-span-color;
+
+      @include media-query {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .announcement {
+    @include announcement-paragraph;
+  }
+
+  #time-place {
+    padding: 0 8px;
+
+    #time {
+      font-family: $cocogoose;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: $gray-text-color;
+      margin-bottom: 0;
+
+      @include media-query {
+        font-size: 33px;
+        margin-top: 40px;
+      }
+    }
+
+    #place {
+      margin-top: 0;
+      border: none;
+      background-color: transparent;
+      padding-top: 0;
+      padding-left: 0;
+      color: #898989;
+      font-size: 15px;
+
+      @include media-query {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.section-header {
+  @include section-header;
+}
+
+.orange-hr {
+  @include short-horizontal-line;
+}
+
+//event's program
+#program {
+  background-color: $dark-color;
+  background-image: url('../images/main-bg.png');
+
+  @include section-container(column);
+
+  @include media-query {
+    padding: 90px 0;
+  }
+
+  .section-header {
+    color: $soft-white-color;
+  }
+
+  #more-program {
+    display: none;
+    text-decoration: none;
+    font-size: 16.5px;
+    color: $soft-white-color;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $soft-white-color;
+    letter-spacing: 0.8px;
+
+    @include media-query {
+      display: block;
+    }
+
+    &:hover {
+      color: $orange-color;
+      border-bottom-color: $orange-color;
+    }
+  }
+
+  #join-gc {
+    width: 90%;
+    margin-top: 40px;
+    padding: 30px 40px;
+    color: $light-gray-color;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    background-color: #ff4f38;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 1.5px;
+
+    @include media-query {
+      display: none;
+    }
+  }
+}
+
+#activities-div {
+  @include media-query {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .activity {
+    min-height: 128px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    padding: 0 18px;
+    border-radius: 4px;
+
+    @include media-query {
+      flex-direction: column;
+      max-width: 180px;
+      gap: 5px;
+      padding: 10px 18px;
+      transition: all 0.3s ease-in-out;
+      margin-bottom: 50px;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 3px 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .activity-icon {
+      width: 12%;
+      height: 14.9%;
+      max-width: 85px;
+      min-width: 61px;
+      object-fit: contain;
+
+      @include media-query {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+      }
+    }
+
+    .activity-title {
+      color: $orange-color;
+      font-size: 20px;
+      min-width: 105px;
+
+      @include media-query {
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    .activity-description {
+      color: $activity-text-color;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+
+      @include media-query {
+        text-align: center;
+      }
+    }
+  }
+}
+
+//featured speakers
+#featured-speakers {
+  @include section-container(column);
+
+  @include media-query {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    color: $dark-color;
+  }
+
+  #show-more {
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: $gray-text-color;
+    background-color: transparent;
+    border: 1px solid $gray-color;
+    border-radius: 4px;
+    padding: 15px 0;
+    transition: all 0.3s ease;
+
+    .arrow-icon {
+      color: $orange-color;
+      margin-left: 5px;
+    }
+
+    @include media-query {
+      display: none;
+    }
+  }
+}
+
+#speakers-div {
+  @include media-query {
+    height: 660px;
+    margin-top: 30px;
+    padding: 0 6.25%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 230px auto;
+    grid-column-gap: 20px;
+  }
+}
+
+.speaker {
+  min-height: 163px;
+  display: flex;
+  gap: 35px;
+  margin-bottom: 50px;
+
+  .speaker-img {
+    position: relative;
+    background-image: url('../images/chess.jpg');
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+
+    @include media-query {
+      background-image: url('../images/chess.png');
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      padding-left: 12%;
+      padding-top: 12%;
+    }
+  }
+
+  .speaker-description {
+    padding-right: 15px;
+
+    .speaker-name {
+      margin: 5px 0;
+      letter-spacing: 0.5px;
+      font-weight: 900;
+
+      @include media-query {
+        font-size: 20px;
+        color: $dark-gray-color;
+      }
+    }
+
+    .speaker-title {
+      font-style: italic;
+      color: $orange-color;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .gray-hr {
+      width: 25px;
+      margin: 10px 0;
+      border: 0.5px solid $gray-color;
+    }
+
+    .speaker-info {
+      margin: 0;
+      color: $gray-text-color;
+      font-weight: 600;
+    }
+  }
+}
+
+.hidden-speakers {
+  display: none;
+  margin-bottom: 20px;
+
+  @include media-query {
+    grid-column: 1 / span 2;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+
+    .speaker {
+      height: auto;
+      max-height: 180px;
+    }
+  }
+
+  &.visible {
+    display: grid;
+  }
+}
+
+//sponsors section
+.sponsors {
+  @include sponsors;
+}
+
+//footer section
+footer {
+  @include footer-section;
+}
+
+//body element
+body {
+  @include body-style;
+}
