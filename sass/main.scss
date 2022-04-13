@@ -2,53 +2,19 @@
 @import 'mixins';
 
 //resets
-ul {
-  padding-left: 0;
-  margin: 0;
-  list-style-type: none;
-}
+@include resets;
 
-a {
-  text-decoration: none;
-}
-
+//header
 header {
   @include header;
 }
 
-#headline {
-  width: 100vw;
-  padding: 25px 5% 40px;
-  margin-top: 50px;
-  background-image: url('../images/main-mobile_bg.png');
-  background-position: 0 -15px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: $light-gray-color;
-  box-sizing: border-box;
+//headline-section
+.headline {
+  @include headline-page('../images/main-mobile_bg.png', '../images/main_big-bg.png');
 
-  @include media-query {
-    background-image: url('../images/main_big-bg.png');
-    background-position: 0 0;
-    margin-top: 0;
-    padding: 35px 12% 130px;
-  }
-
-  #page-header {
-    font-size: 30px;
-    font-family: $cocogoose;
-    line-height: 1.3;
-    background: linear-gradient(to right, #e70e02, #fd5200, #f8961e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    padding: 0 8px;
-
-    @include media-query {
-      width: 700px;
-      font-size: 60px;
-      margin-bottom: 20px;
-    }
+  .page-header {
+    @include webpage-header;
 
     span {
       font-family: $lato;
@@ -64,24 +30,8 @@ header {
     }
   }
 
-  #announcement {
-    background-color: $light-gray-color;
-    margin-top: 10px;
-    padding: 12px;
-    border: 2px solid #fbfefb;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    line-height: 1.5;
-    color: $gray-text-color;
-
-    @include media-query {
-      width: 650px;
-      font-size: 16px;
-      border: 3px solid #fbfefb;
-      padding: 12px 20px;
-    }
+  .announcement {
+    @include announcement-paragraph;
   }
 
   #time-place {
@@ -117,6 +67,7 @@ header {
   }
 }
 
+//program
 #program {
   background-color: $dark-color;
   background-image: url('../images/main-bg.png');
@@ -127,10 +78,10 @@ header {
     padding: 90px 0;
   }
 
-  #program-header {
+  .section-header {
     @include section-header;
 
-    color: #fbfefb;
+    color: $soft-white-color;
   }
 
   .orange-hr {
@@ -141,9 +92,9 @@ header {
     display: none;
     text-decoration: none;
     font-size: 16.5px;
-    color: #fbfefb;
+    color: $soft-white-color;
     padding-bottom: 3px;
-    border-bottom: 1px solid #fbfefb;
+    border-bottom: 1px solid $soft-white-color;
     letter-spacing: 0.8px;
 
     @include media-query {
@@ -253,7 +204,7 @@ header {
     padding: 80px 0;
   }
 
-  #speakers-header {
+  .section-header {
     @include section-header;
 
     color: $dark-color;
@@ -389,7 +340,7 @@ header {
   }
 }
 
-#sponsors {
+.sponsors {
   @include sponsors;
 }
 
@@ -398,19 +349,5 @@ footer {
 }
 
 body {
-  font-family: $lato;
-  width: 100vw;
-  margin: 0;
-  overflow-x: hidden;
-
-  &.active {
-    overflow-y: hidden;
-
-    #headline,
-    #program,
-    #speakers #sponsors,
-    #footer {
-      filter: blur(4px);
-    }
-  }
+  @include body-style;
 }

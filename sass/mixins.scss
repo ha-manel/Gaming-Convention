@@ -4,10 +4,41 @@
   }
 }
 
+@mixin resets {
+  //resets
+  ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin body-style {
+  font-family: $lato;
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+
+  &.active {
+    overflow-y: hidden;
+
+    .headline,
+    #program,
+    #speakers .sponsors,
+    footer {
+      filter: blur(4px);
+    }
+  }
+}
+
 @mixin header {
   width: 100%;
 
-  #top-header {
+  .top-header {
     width: 100%;
     background-color: $banner-color;
     padding: 7px 180px;
@@ -65,7 +96,7 @@
       }
     }
 
-    #logo {
+    .logo {
       width: 55px;
       margin-right: 20px;
       cursor: pointer;
@@ -79,14 +110,14 @@
     }
   }
 
-  #nav-menu {
+  .nav-menu {
     @include media-query {
       display: flex;
       align-items: center;
     }
   }
 
-  #hamburger {
+  .hamburger {
     display: block;
     cursor: pointer;
     width: fit-content;
@@ -128,7 +159,7 @@
     }
   }
 
-  #nav-links {
+  .nav-links {
     width: 70%;
     height: 100vh;
     background-color: $mobile-navmenu-color;
@@ -207,7 +238,7 @@
   }
 
   @include media-query {
-    #campaign {
+    .campaign {
       margin-left: 20px;
       color: $orange-color;
       font-weight: 600;
@@ -221,6 +252,62 @@
         border-color: #d00000;
       }
     }
+  }
+}
+
+@mixin headline-page($bg-img-mobile, $bg-img-desktop) {
+  width: 100vw;
+  padding: 25px 5% 40px;
+  margin-top: 50px;
+  background-image: url($bg-img-mobile);
+  background-position: 0 -15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $light-gray-color;
+  box-sizing: border-box;
+
+  @include media-query {
+    background-image: url($bg-img-desktop);
+    background-position: 0 0;
+    margin-top: 0;
+    padding: 35px 12% 130px;
+  }
+}
+
+@mixin webpage-header {
+  font-size: 30px;
+  font-family: $cocogoose;
+  line-height: 1.3;
+  background: linear-gradient(to right, #e70e02, #fd5200, #f8961e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  padding: 0 8px;
+
+  @include media-query {
+    width: 700px;
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+@mixin announcement-paragraph {
+  background-color: $light-gray-color;
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid #fbfefb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+  color: $gray-text-color;
+
+  @include media-query {
+    width: 650px;
+    font-size: 16px;
+    border: 3px solid #fbfefb;
+    padding: 12px 20px;
   }
 }
 
@@ -255,7 +342,7 @@
     padding: 50px 0;
   }
 
-  #sponsors-header {
+  .sponsors-header {
     @include section-header;
 
     color: #fbfefb;
@@ -265,7 +352,7 @@
     @include short-horizontal-line;
   }
 
-  #brands {
+  .brands {
     width: 100%;
     display: flex;
     gap: 50px;
@@ -297,7 +384,7 @@
     gap: 50px;
   }
 
-  #footer-logo {
+  .footer-logo {
     width: 150px;
     height: auto;
     object-fit: cover;
@@ -307,7 +394,7 @@
     }
   }
 
-  #copyrights {
+  .copyrights {
     font-size: 14px;
     letter-spacing: 0.2px;
     color: $gray-text-color;

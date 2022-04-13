@@ -2,19 +2,19 @@
 const header = document.querySelector('header');
 // create the top part of the header
 const topHeader = document.createElement('div');
-topHeader.id = 'top-header';
+topHeader.className = 'top-header';
 topHeader.innerHTML = '<ul><li> <a class="top-link" href="#"><i class="fa-brands fa-facebook-f"></i></a></li><li><a class="top-link" href="#"><i class="fa-brands fa-twitter"></i></a></li><li><a class="top-link" href="#">English</a></li><li><a class="top-link" href="#">My Page</a></li><li><a class="top-link" href="#">Logout</a></li></ul> ';
 header.appendChild(topHeader);
 
 // create the navbar
 const navBar = document.createElement('nav');
-navBar.innerHTML = '<div id="nav-menu"><div id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><ul id="nav-links"><li><a href="about.html" class="link">About</a></li><li><a href="#program" class="link">Program</a></li><li><a href="#featured-speakers" class="link">Speakers</a></li><li><a href="#sponsors" class="link">Sponsors</a></li><li><a href="#" id="campaign">GC Campaign</a></li></ul></div><a href="index.html"><img src="./images/gc-logo.png" alt="" id="logo"></a>';
+navBar.innerHTML = '<div class="nav-menu"><div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><ul class="nav-links"><li><a href="about.html" class="link">About</a></li><li><a href="index.html#program" class="link">Program</a></li><li><a href="index.html#featured-speakers" class="link">Speakers</a></li><li><a href="#sponsors" class="link">Sponsors</a></li><li><a href="#" class="campaign">GC Campaign</a></li></ul></div><a href="index.html"><img src="./images/gc-logo.png" alt="" class="logo"></a>';
 header.appendChild(navBar);
 
 // mobile navbar
-const hamburger = document.querySelector('#hamburger');
+const hamburger = document.querySelector('.hamburger');
 const body = document.querySelector('body');
-const navMenu = document.querySelector('#nav-menu ul');
+const navMenu = document.querySelector('.nav-menu ul');
 const navLinks = document.querySelectorAll('.link');
 
 hamburger.addEventListener('click', () => {
@@ -38,7 +38,7 @@ navLinks.forEach((link) => {
 });
 
 // fixed navbar
-const topHeaderElement = document.querySelector('#top-header');
+const topHeaderElement = document.querySelector('.top-header');
 const nav = document.querySelector('nav');
 const topHeaderHeight = topHeaderElement.style.height;
 window.onscroll = function fixedNav() {
