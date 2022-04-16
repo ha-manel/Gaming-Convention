@@ -598,7 +598,7 @@ header .nav-links.active {
     overflow: visible;
     display: grid;
     grid-template-columns: auto auto;
-    grid-column-gap: 20px;
+    grid-column-gap: 45px;
   }
   .hidden-speakers .speaker {
     height: auto;
