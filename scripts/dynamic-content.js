@@ -50,13 +50,13 @@ const conventionSpeakers = [
     description: 'PewDiePie\'s popularity on YouTube and extensive media coverage have made him one of the most noted online personalities and content creators.',
   },
   {
-    picture: './images/markus-persson.jpg',
+    picture: './images/markus-persson.png',
     name: 'Markus Persson',
     title: 'A Swedish video game programmer and designer.',
     description: 'He is best known for creating the sandbox video game Minecraft and for founding the video game company Mojang in 2009.',
   },
   {
-    picture: './images/shigeru-miyamoto.jpg',
+    picture: './images/shigeru-miyamoto.png',
     name: 'Shigeru Miyamoto',
     title: 'A Japanese video game designer, producer and game director.',
     description: 'He is the creator of some of the most acclaimed and best-selling game franchises of all time, including Mario, The Legend of Zelda, Donkey Kong, Star Fox and Pikmin.',
@@ -68,13 +68,13 @@ const conventionSpeakers = [
     description: 'Marc Merrill is the Co-Founder, Co-Chairman, and President of Games for Riot Games, the game developer and publisher behind League of Legends.',
   },
   {
-    picture: './images/rekkles.jpg',
+    picture: './images/rekkles.png',
     name: 'Carl Martin Erik Larsson (Rekkles)',
     title: 'A professional League of Legends player',
     description: 'He has played for Fnatic, Alliance, Elements, and G2 Esports.',
   },
   {
-    picture: './images/kaypea.webp',
+    picture: './images/kaypea.png',
     name: 'Kelsie Pelling (KayPea)',
     title: 'Partnered Twitch streamer',
     description: 'She is known for specialising as a mid-laner in League of Legends. She has developed a large community of people to share in positive and competitive gameplay.',

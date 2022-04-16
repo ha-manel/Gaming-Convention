@@ -26,7 +26,7 @@ header {
       color: $header-span-color;
       -webkit-text-fill-color: $header-span-color;
 
-      @include media-query {
+      @include media-query-desktop {
         font-size: 40px;
       }
     }
@@ -47,7 +47,7 @@ header {
       color: $gray-text-color;
       margin-bottom: 0;
 
-      @include media-query {
+      @include media-query-desktop {
         font-size: 33px;
         margin-top: 40px;
       }
@@ -62,7 +62,7 @@ header {
       color: #898989;
       font-size: 15px;
 
-      @include media-query {
+      @include media-query-desktop {
         font-size: 22px;
       }
     }
@@ -84,7 +84,7 @@ header {
 
   @include section-container(column);
 
-  @include media-query {
+  @include media-query-desktop {
     padding: 90px 0;
   }
 
@@ -101,7 +101,7 @@ header {
     border-bottom: 1px solid $soft-white-color;
     letter-spacing: 0.8px;
 
-    @include media-query {
+    @include media-query-desktop {
       display: block;
     }
 
@@ -124,14 +124,14 @@ header {
     border-radius: 4px;
     letter-spacing: 1.5px;
 
-    @include media-query {
+    @include media-query-desktop {
       display: none;
     }
   }
 }
 
 #activities-div {
-  @include media-query {
+  @include media-query-desktop {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -150,7 +150,7 @@ header {
     padding: 0 18px;
     border-radius: 4px;
 
-    @include media-query {
+    @include media-query-desktop {
       flex-direction: column;
       max-width: 180px;
       gap: 5px;
@@ -164,6 +164,11 @@ header {
       }
     }
 
+    @include media-query-xs {
+      padding: 10px 10px;
+      gap: 5px;
+    }
+
     .activity-icon {
       width: 12%;
       height: 14.9%;
@@ -171,7 +176,7 @@ header {
       min-width: 61px;
       object-fit: contain;
 
-      @include media-query {
+      @include media-query-desktop {
         width: 65px;
         height: 65px;
         object-fit: contain;
@@ -183,7 +188,7 @@ header {
       font-size: 20px;
       min-width: 105px;
 
-      @include media-query {
+      @include media-query-desktop {
         text-align: center;
         margin: 0;
       }
@@ -194,7 +199,7 @@ header {
       letter-spacing: 0.2px;
       line-height: 1.3;
 
-      @include media-query {
+      @include media-query-desktop {
         text-align: center;
       }
     }
@@ -205,7 +210,7 @@ header {
 #featured-speakers {
   @include section-container(column);
 
-  @include media-query {
+  @include media-query-desktop {
     padding: 80px 0;
   }
 
@@ -231,14 +236,14 @@ header {
       margin-left: 5px;
     }
 
-    @include media-query {
+    @include media-query-desktop {
       display: none;
     }
   }
 }
 
 #speakers-div {
-  @include media-query {
+  @include media-query-desktop {
     height: 660px;
     margin-top: 30px;
     padding: 0 6.25%;
@@ -255,14 +260,22 @@ header {
   gap: 35px;
   margin-bottom: 50px;
 
+  @include media-query-xs {
+    margin-bottom: 30px;
+  }
+
   .speaker-img {
     position: relative;
     background-image: url('../images/chess.jpg');
-    background-size: 40% 40%;
+    background-size: 70px 70px;
     background-repeat: no-repeat;
 
-    @include media-query {
+    @include media-query-desktop {
       background-image: url('../images/chess.png');
+    }
+
+    @include media-query-xs {
+      background-size: 60px 60px;
     }
 
     img {
@@ -271,6 +284,11 @@ header {
       object-fit: cover;
       padding-left: 12%;
       padding-top: 12%;
+
+      @include media-query-xs {
+        width: 120px;
+        height: 120px;
+      }
     }
   }
 
@@ -282,9 +300,13 @@ header {
       letter-spacing: 0.5px;
       font-weight: 900;
 
-      @include media-query {
+      @include media-query-desktop {
         font-size: 20px;
         color: $dark-gray-color;
+      }
+
+      @include media-query-xs {
+        font-size: 17px;
       }
     }
 
@@ -293,6 +315,10 @@ header {
       color: $orange-color;
       font-size: 15px;
       font-weight: 600;
+
+      @include media-query-xs {
+        font-size: 13px;
+      }
     }
 
     .gray-hr {
@@ -305,6 +331,10 @@ header {
       margin: 0;
       color: $gray-text-color;
       font-weight: 600;
+
+      @include media-query-xs {
+        font-size: 13px;
+      }
     }
   }
 }
@@ -313,7 +343,7 @@ header {
   display: none;
   margin-bottom: 20px;
 
-  @include media-query {
+  @include media-query-desktop {
     grid-column: 1 / span 2;
     overflow: visible;
     display: grid;

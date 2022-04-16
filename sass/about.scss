@@ -12,7 +12,7 @@ header {
 //headline-section
 .headline {
   @include headline-page('../images/about-bg.png', '../images/about-bg.png');
-
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ header {
 
     text-align: center;
 
-    @include media-query {
+    @include media-query-desktop {
       font-size: 50px;
     }
   }
@@ -39,7 +39,7 @@ header {
     border: 1px solid $gray-color;
     border-radius: 6px;
 
-    @include media-query {
+    @include media-query-desktop {
       font-size: 16px;
     }
   }
@@ -50,7 +50,7 @@ header {
     flex-direction: column;
     text-align: center;
 
-    @include media-query {
+    @include media-query-desktop {
       font-size: 17px;
       margin-top: 30px;
     }
@@ -66,7 +66,7 @@ header {
       text-decoration: underline;
       font-size: 15px;
 
-      @include media-query {
+      @include media-query-desktop {
         font-size: 17px;
       }
     }
@@ -79,6 +79,7 @@ header {
 
 .section-header {
   @include section-header;
+  text-align: center;
 }
 
 //about the logo section
@@ -104,11 +105,19 @@ header {
     margin-top: 40px;
     object-fit: cover;
     border: 1px solid $gray-color;
+
+    @include media-query-desktop {
+      width: 360px;
+    }
+
+    @include media-query-xs {
+      width: 100%;
+    }
   }
 }
 
 .sub-text {
-  width: 385px;
+  width: 100%;
   color: $gray-text-color;
   line-height: 1.2;
   text-align: center;
@@ -116,7 +125,7 @@ header {
   letter-spacing: 0.3px;
   margin-top: 0;
 
-  @include media-query {
+  @include media-query-desktop {
     width: 500px;
     font-size: 16px;
   }
@@ -139,7 +148,7 @@ header {
   width: 90%;
   gap: 10px;
 
-  @include media-query {
+  @include media-query-desktop {
     width: 70%;
     flex-direction: row;
     margin: 40px 0;
@@ -148,7 +157,8 @@ header {
   .event {
     width: 100%;
     height: 230px;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,7 +192,7 @@ header {
 .sponsors {
   @include sponsors;
 
-  @include media-query {
+  @include media-query-desktop {
     display: none;
   }
 }
@@ -191,7 +201,7 @@ header {
 footer {
   @include footer-section;
 
-  @include media-query {
+  @include media-query-desktop {
     background-color: $dark-color;
 
     .copyrights {

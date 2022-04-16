@@ -1,6 +1,12 @@
 //media query
-@mixin media-query {
+@mixin media-query-desktop {
   @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-query-xs {
+  @media screen and (max-width: 450px) {
     @content;
   }
 }
@@ -50,7 +56,7 @@
     align-items: center;
     box-sizing: border-box;
 
-    @include media-query {
+    @include media-query-desktop {
       display: flex;
     }
 
@@ -87,7 +93,7 @@
     transition: all 0.3s ease-in-out;
     z-index: 1;
 
-    @include media-query {
+    @include media-query-desktop {
       position: unset;
       flex-direction: row-reverse;
       padding: 5px 12%;
@@ -105,7 +111,7 @@
       cursor: pointer;
       object-fit: cover;
 
-      @include media-query {
+      @include media-query-desktop {
         width: 75px;
         height: 50px;
         object-fit: cover;
@@ -114,7 +120,7 @@
   }
 
   .nav-menu {
-    @include media-query {
+    @include media-query-desktop {
       display: flex;
       align-items: center;
     }
@@ -129,7 +135,7 @@
     top: 15px;
     z-index: 3;
 
-    @include media-query {
+    @include media-query-desktop {
       display: none;
     }
 
@@ -180,7 +186,7 @@
     transition: all 0.3s ease-in-out;
     z-index: 2;
 
-    @include media-query {
+    @include media-query-desktop {
       height: auto;
       width: fit-content;
       position: unset;
@@ -201,7 +207,7 @@
         color: $soft-white-color;
         font-weight: 600;
 
-        @include media-query {
+        @include media-query-desktop {
           color: $dark-gray-color;
           font-size: 14px;
           font-weight: 600;
@@ -240,7 +246,7 @@
     }
   }
 
-  @include media-query {
+  @include media-query-desktop {
     #campaign {
       margin-left: 20px;
       color: $orange-color;
@@ -269,7 +275,7 @@
   background-color: $light-gray-color;
   box-sizing: border-box;
 
-  @include media-query {
+  @include media-query-desktop {
     background-image: url($bg-img-desktop);
     background-position: 0 0;
     margin-top: 0;
@@ -287,7 +293,7 @@
   font-weight: 900;
   padding: 0 8px;
 
-  @include media-query {
+  @include media-query-desktop {
     width: 700px;
     font-size: 60px;
     margin-bottom: 20px;
@@ -306,7 +312,7 @@
   line-height: 1.5;
   color: $gray-text-color;
 
-  @include media-query {
+  @include media-query-desktop {
     width: 650px;
     font-size: 16px;
     border: 3px solid $soft-white-color;
@@ -343,7 +349,7 @@
 
   background-color: #414246;
 
-  @include media-query {
+  @include media-query-desktop {
     padding: 50px 0;
   }
 
@@ -359,7 +365,7 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    @include media-query {
+    @include media-query-desktop {
       margin: 0 80px;
     }
 
@@ -380,7 +386,7 @@
   padding-top: 0;
   padding-bottom: 0;
 
-  @include media-query {
+  @include media-query-desktop {
     gap: 50px;
   }
 
@@ -389,7 +395,7 @@
     height: auto;
     object-fit: cover;
 
-    @include media-query() {
+    @include media-query-desktop() {
       width: 200px;
     }
   }
@@ -399,7 +405,7 @@
     letter-spacing: 0.2px;
     color: $gray-text-color;
 
-    @include media-query() {
+    @include media-query-desktop() {
       font-size: 16px;
     }
   }
