@@ -2,7 +2,7 @@
 
 # Gaming Convention
 
-> This is a Microverse (@microverseinc) project which aims at creating a website for an event using a design from Behance.
+> A website created for a gaming event using a design from Behance.
 
 ![image-removebg-preview (1)](https://user-images.githubusercontent.com/50721479/163370590-bfc02eea-cbcb-48d7-aaa4-237c4ec7fe4c.png)
 
@@ -25,7 +25,7 @@ Build a website for an event by following a [design from behance](https://www.be
 
 ## Live Demo
 
-Check **Live Demo** [here.](https://ha-manel.github.io/Microverse-Gaming-Convention/)
+Check **Live Demo** [here.](https://ha-manel.github.io/Gaming-Convention/)
 
 ## Getting Started
 
